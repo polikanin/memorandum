@@ -73,17 +73,20 @@
 }
 
 .catalog-links{
-  padding: 68px 0 52px 0;
+  padding: 68px 0 1px 0;
 
   .items{
     margin: 40px auto 0 auto;
     @include flex-box();
-    @include justify-content(space-between);
+    @include justify-content(space-around);
+    @include flex-wrap(wrap);
+
   }
 
   .item{
     width: 380px;
     text-align: center;
+    margin-bottom: 90px;
 
     &:before{
       content: '';
