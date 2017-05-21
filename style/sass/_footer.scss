@@ -17,6 +17,11 @@
   &-link{
     &>a{
       text-transform: uppercase;
+      @include transition();
+
+      &:hover{
+        color: #596523;
+      }
     }
   }
 
@@ -26,6 +31,11 @@
 
   &-sub-link{
     margin-bottom: 8px;
+    @include transition();
+
+    &:hover{
+      color: #596523;
+    }
   }
 
   &-container{

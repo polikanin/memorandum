@@ -36,6 +36,7 @@
   line-height: 60px;
   text-transform: uppercase;
   text-align: center;
+  letter-spacing: -4.6px;
 
   &:before{
     content: '';
@@ -45,7 +46,7 @@
     margin: 0 auto 35px auto;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../../image/ui/heading-decor.png");
+    background-image: url("../image/ui/heading-decor.png");
   }
 }
 
@@ -57,6 +58,7 @@
   line-height: 60px;
   text-transform: uppercase;
   text-align: center;
+  letter-spacing: -3px;
 
   &:before{
     content: '';
@@ -66,6 +68,146 @@
     margin: 0 auto 35px auto;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../../image/ui/title-decor.png");
+    background-image: url("../image/ui/title-decor.png");
+  }
+}
+
+.call-us{
+  padding: 45px 0;
+
+  .title{
+    margin-bottom: 40px;
+  }
+
+  &__container{
+    @include flex-box();
+    @include justify-content(start);
+    @include align-items(center);
+  }
+
+  &__contacts{
+    width: 763px;
+    height: 369px;
+    background-color: #8c9a4d;
+    padding: 17px 28px 14px 28px;
+    @include flex-box();
+    @include justify-content(space-between);
+  }
+
+  &__block{
+    width: 545px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 47px 0 0 0;
+
+    &:before{
+      content: '';
+      position: absolute;
+      left: calc(50% - 36px);
+      top: -44px;
+      width: 72px;
+      height: 77px;
+      background-repeat: no-repeat;
+      background-image: url("../image/call-us/decor1.png");
+    }
+
+    &:after{
+      content: '';
+      position: absolute;
+      left: calc(50% - 36px);
+      bottom: -14px;
+      width: 72px;
+      height: 44px;
+      background-repeat: no-repeat;
+      background-image: url("../image/call-us/decor.png");
+    }
+  }
+
+  &__phone{
+    display: block;
+    color: #fffefe;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 52px;
+  }
+
+  &__hours{
+    display: block;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin: 10px 0 28px 0;
+
+    &:before{
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      width: 39px;
+      height: 37px;
+      background-repeat: no-repeat;
+      background-image: url("../image/call-us/phone.png");
+      margin-right: 10px;
+    }
+  }
+
+  &__btn{
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 223px;
+    height: 70px;
+    border: 2px solid #ffffff;
+    display: block;
+    margin: 0 auto 0 auto;
+    @include transition();
+
+    &:hover{
+      background-color: white;
+      color: #8c9a4d;
+    }
+  }
+
+  &__pic{
+    width: 162px;
+    border: 2px solid #ffffff;
+    @include flex-box();
+    @include flex-direction(column);
+    @include justify-content(space-around);
+
+    img{
+      display: block;
+      margin: 0 auto 0 auto;
+    }
+  }
+
+  &__links{
+    height: 338px;
+    @include flex-box();
+    @include flex-direction(column);
+    @include justify-content(space-around);
+    @include align-items(start);
+  }
+
+  &__link{
+    display: inline-block;
+    color: #0c1b2f;
+    font-family: Literaturnaya;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #8c9a4d;
+    padding: 0 10px 0 30px;
+    letter-spacing: -1px;
+    @include transition();
+
+    &:hover{
+      color: #8c9a4d;
+    }
   }
 }

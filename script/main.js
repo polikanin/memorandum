@@ -9,7 +9,6 @@ var app = new Vue ({
     },
     methods:{
         modalToggle: function (n) {
-            console.log('test')
             this.modal.number = n;
             this.modal.isOpen = !this.modal.isOpen;
             this.modal.thanks = false;
@@ -67,5 +66,10 @@ var requared = $('input[data-required]');
 requared.blur(function() {var self = $(this);if($(this).val().length == "") {self.addClass('input_error');setTimeout(function () {self.removeClass('input_error')}, 2000)}});
 requared.focus(function() {$(this).removeClass('input_error');});
 
-$('.slider').slick();
+$('.first-screen__slider').slick({
+    dots: true,
+    arrows: false,
+    vertical: true,
+    verticalSwiping: true,
+});
 
