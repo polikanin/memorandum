@@ -71,5 +71,7 @@ $('.first-screen__slider').slick({
     arrows: false,
     vertical: true,
     verticalSwiping: true,
+    // autoplay: true,
+    // autoplaySpeed: 3000,
 });
 
