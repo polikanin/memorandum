@@ -1,3 +1,70 @@
+var catalog = [
+    {
+        catalogPic: 'image/catalog/1.png',
+        catalogName: 'Название венка',
+        catalogSize: '120',
+        catalogPrice: '47 900',
+        catalogSale: '10'
+    },
+    {
+        catalogPic: 'image/catalog/1.png',
+        catalogName: 'Название венка',
+        catalogSize: '120',
+        catalogPrice: '47 000'
+    },
+    {
+        catalogPic: 'image/catalog/1.png',
+        catalogName: 'Название венка',
+        catalogSize: '120',
+        catalogPrice: '44 900',
+        catalogSale: '10'
+    },
+    {
+        catalogPic: 'image/catalog/1.png',
+        catalogName: 'Название венка',
+        catalogSize: '120',
+        catalogPrice: '49 900'
+    },
+    {
+        catalogPic: 'image/catalog/1.png',
+        catalogName: 'Название венка',
+        catalogSize: '120',
+        catalogPrice: '41 900',
+        catalogSale: '13'
+    },
+    {
+        catalogPic: 'image/catalog/1.png',
+        catalogName: 'Название венка',
+        catalogSize: '120',
+        catalogPrice: '52 900'
+    },
+    {
+        catalogPic: 'image/catalog/1.png',
+        catalogName: 'Название венка',
+        catalogSize: '120',
+        catalogPrice: '43 900',
+        catalogSale: '15'
+    },
+    {
+        catalogPic: 'image/catalog/1.png',
+        catalogName: 'Название венка',
+        catalogSize: '120',
+        catalogPrice: '54 900'
+    },
+    {
+        catalogPic: 'image/catalog/1.png',
+        catalogName: 'Название венка',
+        catalogSize: '120',
+        catalogPrice: '49 900'
+    },
+    {
+        catalogPic: 'image/catalog/1.png',
+        catalogName: 'Название венка',
+        catalogSize: '120',
+        catalogPrice: '46 900'
+    },
+];
+
 var app = new Vue ({
     el:'#app',
     data:{
@@ -6,7 +73,15 @@ var app = new Vue ({
             thanks: false,
             number: '',
         },
+        myFilter: '',
+        catalog: catalog.slice().sort(),
+        catalogFilter: 0,
     },
+    // filters: {
+    //     myFilter: function (val) {
+    //         return val
+    //     }
+    // },
     methods:{
         modalToggle: function (n) {
             this.modal.number = n;
@@ -57,6 +132,60 @@ var app = new Vue ({
             $('body, html').animate({
                 scrollTop: $(path).offset().top
             },600);
+        },
+        filter: function () {
+            var  compareNumeric;
+            var result = [];
+            switch (this.catalogFilter){
+                case '1':
+                    compareNumeric = function (a, b) {
+                        if (a.catalogPrice > b.catalogPrice) return 1;
+                        if (a.catalogPrice < b.catalogPrice) return -1;
+                    };
+                    this.catalog.sort(compareNumeric);
+                    break;
+                case '2':
+                    compareNumeric = function (a, b) {
+                        if (a.catalogPrice < b.catalogPrice) return 1;
+                        if (a.catalogPrice > b.catalogPrice) return -1;
+                    };
+                    this.catalog.sort(compareNumeric);
+                    break;
+                case '3':
+                    compareNumeric = function (a, b) {
+                        if (a.catalogSale > b.catalogSale) return 1;
+                        if (a.catalogSale < b.catalogSale) return -1;
+                    };
+                    result = [];
+                    this.catalog.forEach(function (item) {
+                        if(item.catalogSale){
+                            result.unshift(item)
+                        }
+                        else{
+                            result.push(item);
+                        }
+                    });
+                    this.catalog = result.sort(compareNumeric);
+                    break;
+                case '4':
+                    compareNumeric = function (a, b) {
+                        if (a.catalogSale < b.catalogSale) return 1;
+                        if (a.catalogSale > b.catalogSale) return -1;
+                    };
+                    result = [];
+                    _.forEach(this.catalog, function (item) {
+                        if(item.catalogSale){
+                            result.unshift(item)
+                        }
+                        else{
+                            result.push(item);
+                        }
+                    });
+                    this.catalog = result.sort(compareNumeric);
+                    break;
+                default:
+                    this.catalog = catalog.slice().sort();
+            }
         }
     }
 });
@@ -75,3 +204,6 @@ $('.first-screen__slider').slick({
     // autoplaySpeed: 3000,
 });
 
+$("[data-fancybox]").fancybox({
+    // Options will go here
+});
