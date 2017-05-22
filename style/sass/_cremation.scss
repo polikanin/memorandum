@@ -1,0 +1,59 @@
+.cremation{
+  padding: 45px 0;
+
+  &-head{
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../image/cremation/bg.png");
+    padding: 62px 0 50px 0;
+    margin: 20px auto 0 auto;
+
+    &__container{
+      width: 985px;
+      background-color: rgba(255,255,255,0.8);
+      margin: 0 auto 0 auto;
+      padding: 75px 120px;
+    }
+
+    &__text{
+      color: #0c1b2f;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+
+    &__title{
+      color: #0c1b2f;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
+  }
+
+  &-container{
+    margin: 40px auto 0 auto;
+
+    p{
+      color: #0c1b2f;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+
+    img{
+      &:nth-of-type(even){
+        float: left;
+        margin: 10px 40px 40px 0;
+      }
+      &:nth-of-type(odd){
+        float: right;
+        margin: 10px 0 40px 40px;
+      }
+    }
+  }
+}
