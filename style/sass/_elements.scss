@@ -182,6 +182,34 @@
 .catalog{
   padding: 20px 0;
 
+  &__ctrl{
+    @include flex-box();
+    @include justify-content(space-around);
+    margin-bottom: 50px;
+
+    &-btn{
+      font-family: Literaturnaya;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 36px;
+      text-transform: uppercase;
+      color: #18203e;
+      padding: 0 20px;
+      height: 56px;
+      border: 1px solid transparent;
+      @include transition();
+
+      &:hover{
+        color: #8c9a4d;
+      }
+
+      &.active{
+        border-color: #8c9a4d;
+        color: #8c9a4d;
+      }
+    }
+  }
+
   &-sort{
     @include flex-box();
     @include justify-content(center);

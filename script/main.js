@@ -1,70 +1,3 @@
-var catalog = [
-    {
-        catalogPic: 'image/catalog/1.png',
-        catalogName: 'Название венка',
-        catalogSize: '120',
-        catalogPrice: '47 900',
-        catalogSale: '10'
-    },
-    {
-        catalogPic: 'image/catalog/1.png',
-        catalogName: 'Название венка',
-        catalogSize: '120',
-        catalogPrice: '47 000'
-    },
-    {
-        catalogPic: 'image/catalog/1.png',
-        catalogName: 'Название венка',
-        catalogSize: '120',
-        catalogPrice: '44 900',
-        catalogSale: '10'
-    },
-    {
-        catalogPic: 'image/catalog/1.png',
-        catalogName: 'Название венка',
-        catalogSize: '120',
-        catalogPrice: '49 900'
-    },
-    {
-        catalogPic: 'image/catalog/1.png',
-        catalogName: 'Название венка',
-        catalogSize: '120',
-        catalogPrice: '41 900',
-        catalogSale: '13'
-    },
-    {
-        catalogPic: 'image/catalog/1.png',
-        catalogName: 'Название венка',
-        catalogSize: '120',
-        catalogPrice: '52 900'
-    },
-    {
-        catalogPic: 'image/catalog/1.png',
-        catalogName: 'Название венка',
-        catalogSize: '120',
-        catalogPrice: '43 900',
-        catalogSale: '15'
-    },
-    {
-        catalogPic: 'image/catalog/1.png',
-        catalogName: 'Название венка',
-        catalogSize: '120',
-        catalogPrice: '54 900'
-    },
-    {
-        catalogPic: 'image/catalog/1.png',
-        catalogName: 'Название венка',
-        catalogSize: '120',
-        catalogPrice: '49 900'
-    },
-    {
-        catalogPic: 'image/catalog/1.png',
-        catalogName: 'Название венка',
-        catalogSize: '120',
-        catalogPrice: '46 900'
-    },
-];
-
 var app = new Vue ({
     el:'#app',
     data:{
@@ -77,12 +10,8 @@ var app = new Vue ({
         catalog: catalog.slice().sort(),
         catalogFilter: 0,
         infoTab: 1,
+        material: 'marble'
     },
-    // filters: {
-    //     myFilter: function (val) {
-    //         return val
-    //     }
-    // },
     methods:{
         modalToggle: function (n) {
             this.modal.number = n;

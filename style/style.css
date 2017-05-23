@@ -1330,6 +1330,35 @@
 
 .catalog {
   padding: 20px 0; }
+  .catalog__ctrl {
+    display: -webkit-box;
+    display: -ms-box;
+    display: box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-pack: distribute;
+    -webkit-justify-content: space-around;
+    -ms-justify-content: space-around;
+    justify-content: space-around;
+    margin-bottom: 50px; }
+    .catalog__ctrl-btn {
+      font-family: Literaturnaya;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 36px;
+      text-transform: uppercase;
+      color: #18203e;
+      padding: 0 20px;
+      height: 56px;
+      border: 1px solid transparent;
+      transition: 0.25s all;
+      -webkit-transition: 0.25s all; }
+      .catalog__ctrl-btn:hover {
+        color: #8c9a4d; }
+      .catalog__ctrl-btn.active {
+        border-color: #8c9a4d;
+        color: #8c9a4d; }
   .catalog-sort {
     display: -webkit-box;
     display: -ms-box;

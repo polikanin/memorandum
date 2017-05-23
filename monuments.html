@@ -51,7 +51,7 @@
         </div>
     </nav>
 
-    <div class="organisation">
+    <div class="crosses">
         <!-- FIRST SCREEN -->
         <section class="first-screen" style="background-image: url('image/organisation/first-screen/bg.png')">
             <div class="wrapper">
@@ -64,97 +64,58 @@
             </div>
         </section>
 
-        <!-- CATALOG LINKS -->
-        <section class="catalog-links">
+        <!-- CATALOG -->
+        <section class="catalog">
             <div class="wrapper">
+                <a href="" class="back-btn">назад к списку услуг</a>
+
                 <h2 class="heading">
-                    Организация похорон
+                    памятники гранита и мрамора
+                    по доступным ценам в рассрочку
                 </h2>
 
-                <div class="items">
-                    <div class="item">
-                        <div class="item-pic">
-                            <img src="image/home/section1/1.png" alt="pic">
-                        </div>
+                <div class="catalog-sort">
+                    <p class="catalog-sort__text">
+                        Сортировать по
+                    </p>
 
-                        <p class="item-heading">
-                            Организация похорон
-                        </p>
-                        <p class="item-text">
-                            Все необходимое для достойных похорон по низким ценам
-                        </p>
-                        <a href="" class="item-link">Полный перечень</a>
+                    <div class="catalog-sort__select">
+                        <select v-on:change="filter" v-model="catalogFilter">
+                            <option value="0">не сортировать</option>
+                            <option value="1" selected>цене по возрастанию</option>
+                            <option value="2">цене по убыванию</option>
+                            <option value="3">скидке по убыванию</option>
+                            <option value="4">скидке по возрастанию</option>
+                        </select>
                     </div>
-                    <div class="item">
-                        <div class="item-pic">
-                            <img src="image/home/section1/1.png" alt="pic">
+                </div>
+
+                <div class="catalog__ctrl">
+                    <button class="catalog__ctrl-btn" v-on:click="material = 'marble'" v-bind:class="{active: material == 'marble'}">мраморные памятники</button>
+                    <button class="catalog__ctrl-btn" v-on:click="material = 'granite'" v-bind:class="{active: material == 'granite'}">гранитные  памятники</button>
+                </div>
+
+                <div class="catalog-items">
+                    <div class="catalog-item" v-for="item in catalog" v-if="item.material == material">
+                        <div class="catalog-item__pic" v-bind:style="{backgroundImage:'url('+item.catalogPic+')'}">
+                            <span class="catalog-item__sale" v-if="item.catalogSale">
+                                -{{item.catalogSale}}%
+                            </span>
                         </div>
 
-                        <p class="item-heading">
-                            Кремация
-                        </p>
-                        <p class="item-text">
-                            Организация кремации и всех сопутствующих услуг
-                        </p>
-                        <a href="" class="item-link">Полный перечень</a>
-                    </div>
-                    <div class="item">
-                        <div class="item-pic">
-                            <img src="image/home/section1/1.png" alt="pic">
+                        <div class="catalog-item__description">
+                            <p class="catalog-item__name">
+                                {{item.catalogName}}
+                            </p>
+                            <p class="catalog-item__parameter">
+                                <span>{{item.catalogSize}} см.</span>
+                                <span>{{item.catalogPrice}} руб.</span>
+                            </p>
                         </div>
-
-                        <p class="item-heading">
-                            ПАМЯТНИКИ
-                        </p>
-                        <p class="item-text">
-                            Памятники из гранита и мрамора по доступным ценам в рассрочку
-                        </p>
-                        <a href="" class="item-link">Полный перечень</a>
-                    </div>
-                    <div class="item">
-                        <div class="item-pic">
-                            <img src="image/home/section1/1.png" alt="pic">
-                        </div>
-
-                        <p class="item-heading">
-                            ПАМЯТНИКИ
-                        </p>
-                        <p class="item-text">
-                            Памятники из гранита и мрамора по доступным ценам в рассрочку
-                        </p>
-                        <a href="" class="item-link">Полный перечень</a>
-                    </div>
-                    <div class="item">
-                        <div class="item-pic">
-                            <img src="image/home/section1/1.png" alt="pic">
-                        </div>
-
-                        <p class="item-heading">
-                            ПАМЯТНИКИ
-                        </p>
-                        <p class="item-text">
-                            Памятники из гранита и мрамора по доступным ценам в рассрочку
-                        </p>
-                        <a href="" class="item-link">Полный перечень</a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- SECTION 2 -->
-        <section class="s2">
-            <div class="wrapper">
-                <h2 class="plan-heading">
-                    план Северного кладбища Ростова-на-Дону
-                </h2>
-
-                <div class="pic">
-                    <a href="image/organisation/plan/plan.png" data-fancybox class="zoom"></a>
-                    <img src="image/organisation/plan/plan.png" alt="pic">
-                </div>
-            </div>
-        </section>
-
 
         <!-- CALL US -->
         <section class="call-us">
@@ -258,49 +219,49 @@
 
     <!-- MODAL WINDOW -->
     <!--<transition name="animation-modal">-->
-        <!--<div class="modal" v-show="modal.isOpen">-->
-            <!--<div class="layout" v-on:click.prevent="modalToggle">-->
+    <!--<div class="modal" v-show="modal.isOpen">-->
+    <!--<div class="layout" v-on:click.prevent="modalToggle">-->
 
-            <!--</div>-->
+    <!--</div>-->
 
-            <!--<transition name="animation-fade">-->
-                <!--<div class="popup" v-show="modal.number == 1">-->
-                    <!--<div class="close" v-on:click.prevent="modalToggle"></div>-->
+    <!--<transition name="animation-fade">-->
+    <!--<div class="popup" v-show="modal.number == 1">-->
+    <!--<div class="close" v-on:click.prevent="modalToggle"></div>-->
 
-                    <!--<form action="mail.php" method="post" name="form-1" v-on:submit.prevent="submit">-->
-                        <!--<h3 class="heading">test2</h3>-->
-
-
-
-                        <!--<button class="btn"></button>-->
-                    <!--</form>-->
-                <!--</div>-->
-            <!--</transition>-->
-
-            <!--<transition name="animation-fade">-->
-                <!--<div class="popup_lg" v-show="modal.number == 2">-->
-                    <!--<div class="close" v-on:click.prevent="modalToggle"></div>-->
-
-                    <!--<form action="mail.php" method="post" name="form-2" v-on:submit.prevent="submit">-->
-                        <!--<h3 class="heading">test2</h3>-->
+    <!--<form action="mail.php" method="post" name="form-1" v-on:submit.prevent="submit">-->
+    <!--<h3 class="heading">test2</h3>-->
 
 
 
-                        <!--<button class="btn">ok</button>-->
-                    <!--</form>-->
-                <!--</div>-->
-            <!--</transition>-->
+    <!--<button class="btn"></button>-->
+    <!--</form>-->
+    <!--</div>-->
+    <!--</transition>-->
 
-            <!--<transition name="animation-fade">-->
-                <!--<div class="popup" v-show="modal.thanks">-->
-                    <!--<div class="close" v-on:click.prevent="modalToggle"></div>-->
+    <!--<transition name="animation-fade">-->
+    <!--<div class="popup_lg" v-show="modal.number == 2">-->
+    <!--<div class="close" v-on:click.prevent="modalToggle"></div>-->
 
-                    <!--<div class="popup_thanks">-->
-                        <!--<h2>Thanks</h2>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</transition>-->
-        <!--</div>-->
+    <!--<form action="mail.php" method="post" name="form-2" v-on:submit.prevent="submit">-->
+    <!--<h3 class="heading">test2</h3>-->
+
+
+
+    <!--<button class="btn">ok</button>-->
+    <!--</form>-->
+    <!--</div>-->
+    <!--</transition>-->
+
+    <!--<transition name="animation-fade">-->
+    <!--<div class="popup" v-show="modal.thanks">-->
+    <!--<div class="close" v-on:click.prevent="modalToggle"></div>-->
+
+    <!--<div class="popup_thanks">-->
+    <!--<h2>Thanks</h2>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</transition>-->
+    <!--</div>-->
     <!--</transition>-->
 </div>
 
