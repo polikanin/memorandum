@@ -83,35 +83,41 @@ var app = new Vue ({
                     break;
                 case '3':
                     compareNumeric = function (a, b) {
-                        if (a.catalogSale > b.catalogSale) return 1;
-                        if (a.catalogSale < b.catalogSale) return -1;
+                        if (a.catalogSale < b.catalogSale) return 1;
+                        if (a.catalogSale > b.catalogSale) return -1;
                     };
                     result = [];
                     this.catalog.forEach(function (item) {
-                        if(item.catalogSale){
-                            result.unshift(item)
+                        if(item.catalogSale !== ''){
+                            result.push(item);
                         }
                         else{
-                            result.push(item);
+                            result.unshift(item);
                         }
                     });
                     this.catalog = result.sort(compareNumeric);
                     break;
                 case '4':
                     compareNumeric = function (a, b) {
-                        if (a.catalogSale < b.catalogSale) return 1;
-                        if (a.catalogSale > b.catalogSale) return -1;
+                        if (a.catalogSale > b.catalogSale) return 1;
+                        if (a.catalogSale < b.catalogSale) return -1;
                     };
+                    tmpArr = [];
+                    this.catalog.forEach(function (item) {
+                        tmpArr.push(item);
+                    });
+                    tmpArr = tmpArr.sort(compareNumeric);
                     result = [];
-                    _.forEach(this.catalog, function (item) {
-                        if(item.catalogSale){
-                            result.unshift(item)
+                    tmpArr.reverse();
+                    tmpArr.forEach(function (item) {
+                        if(item.catalogSale !== ''){
+                            result.unshift(item);
                         }
                         else{
                             result.push(item);
                         }
                     });
-                    this.catalog = result.sort(compareNumeric);
+                    this.catalog = result;
                     break;
                 default:
                     this.catalog = catalog.slice().sort();
