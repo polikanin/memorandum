@@ -1624,26 +1624,15 @@
     left: 0; }
   .modal .close {
     position: absolute;
-    top: -40px;
-    right: -4px;
+    top: 15px;
+    right: 15px;
     cursor: pointer;
-    width: 26px;
-    height: 26px; }
-    .modal .close:after, .modal .close:before {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 3px;
-      background-color: white;
-      position: absolute;
-      bottom: 50%;
-      left: 0; }
-    .modal .close:after {
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg); }
-    .modal .close:before {
-      transform: rotate(-45deg);
-      -webkit-transform: rotate(-45deg); }
+    width: 49px;
+    height: 49px;
+    z-index: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../image/modal/close.png"); }
   .modal .popup, .modal .popup_lg, .modal .popup_thanks {
     z-index: 1;
     position: absolute;
@@ -1651,9 +1640,55 @@
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
     -webkit-transform: translate3d(-50%, -50%, 0);
-    background-color: white;
-    width: 400px;
-    height: 400px; }
+    background-color: #8c9a4d;
+    width: 800px;
+    padding: 60px 32px 40px 32px; }
+    .modal .popup-text {
+      color: #ffffff;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 52px;
+      text-align: center;
+      margin-bottom: 50px; }
+    .modal .popup-container {
+      display: -webkit-box;
+      display: -ms-box;
+      display: box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -ms-flex-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-justify-content: space-between;
+      justify-content: space-between; }
+      .modal .popup-container span {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 15px; }
+      .modal .popup-container input {
+        width: 350px;
+        height: 50px;
+        border: 2px solid #ffffff;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 0 15px; }
+        .modal .popup-container input:focus {
+          border-color: #596523; }
+    .modal .popup .btn, .modal .popup_lg .btn, .modal .popup_thanks .btn {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      width: 300px;
+      height: 50px;
+      border: 2px solid #ffffff;
+      display: block;
+      margin: 50px auto 0 auto; }
     .modal .popup_lg {
       top: 50px;
       left: 50%;
@@ -1661,6 +1696,9 @@
       -webkit-transform: translateX(-50%);
       width: 600px;
       background-color: white; }
+    .modal .popup_thanks {
+      text-align: center;
+      color: white; }
 
 .header {
   padding: 0 0 4px 0; }
@@ -2259,6 +2297,197 @@
       float: right;
       margin: 10px 0 40px 40px; }
 
+.transport {
+  padding: 45px 0; }
+  .transport-container p {
+    color: #0c1b2f;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-bottom: 10px; }
+  .transport-container img {
+    float: right;
+    margin: 0 0 0 45px; }
+  .transport-items {
+    margin: 40px auto;
+    display: -webkit-box;
+    display: -ms-box;
+    display: box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between; }
+  .transport-item {
+    width: 572px;
+    border: 3px solid #8c9a4d;
+    padding: 40px 30px 40px 30px;
+    color: #0c1b2f; }
+  .transport-heading {
+    font-family: Literaturnaya;
+    font-weight: 700;
+    line-height: 26px;
+    text-transform: uppercase;
+    margin-bottom: 10px; }
+  .transport-text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 5px; }
+  .transport-price {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 20px 0 0 0; }
+  .transport .text {
+    color: #0c1b2f;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400; }
+    .transport .text span {
+      font-weight: 700; }
+
+.information-tabs {
+  margin: 40px auto;
+  display: -webkit-box;
+  display: -ms-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between; }
+.information-tab__btn {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+  padding: 6px 16px;
+  width: 300px;
+  border: 1px solid transparent;
+  transition: 0.25s all;
+  -webkit-transition: 0.25s all; }
+  .information-tab__btn:hover, .information-tab__btn.active {
+    border-color: #8c9a4d; }
+.information-tab__body {
+  width: 790px; }
+  .information-tab__body-head {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px 30px;
+    margin-bottom: 30px; }
+    .information-tab__body-head-inner {
+      width: 100%;
+      height: 283px;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: -webkit-box;
+      display: -ms-box;
+      display: box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      -ms-justify-content: center;
+      justify-content: center;
+      -ms-box-align: center;
+      box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      -ms-align-items: center;
+      align-items: center; }
+      .information-tab__body-head-inner h2 {
+        font-family: Literaturnaya;
+        color: #18203e;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 36px;
+        text-transform: uppercase; }
+  .information-tab__body h3 {
+    color: #000000;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px; }
+  .information-tab__body p {
+    color: #000000;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-bottom: 15px; }
+
+.burial {
+  padding: 45px 0; }
+  .burial .text-block {
+    margin: 40px auto; }
+    .burial .text-block p {
+      color: #0c1b2f;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400; }
+      .burial .text-block p strong {
+        font-weight: 700; }
+  .burial-item {
+    display: -webkit-box;
+    display: -ms-box;
+    display: box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-box-pack: start;
+    box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-box-align: start;
+    box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -ms-align-items: flex-start;
+    align-items: flex-start;
+    margin-bottom: 60px; }
+    .burial-item__pic {
+      width: 285px;
+      min-width: 285px;
+      height: 202px;
+      background-color: #c5b89d;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      z-index: 1;
+      margin: 0 30px 0 0; }
+      .burial-item__pic:after {
+        content: '';
+        width: 1px;
+        height: 100%;
+        background-color: #8c9a4d;
+        position: absolute;
+        top: 0;
+        right: -10px;
+        z-index: 1; }
+    .burial-item__container {
+      color: #0c1b2f;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400; }
+    .burial-item__heading {
+      font-family: Literaturnaya;
+      font-weight: 700;
+      line-height: 26px;
+      text-transform: uppercase;
+      margin-bottom: 10px; }
+    .burial-item__price {
+      margin-top: 10px;
+      font-weight: 700; }
+
 body {
   padding: 0;
   margin: 0;
@@ -2332,14 +2561,14 @@ button {
 .animation-fade-enter, .animation-fade-leave-to {
   opacity: 0; }
 .animation-fade-enter-active, .animation-fade-leave-active {
-  transition: 1s all;
-  -webkit-transition: 1s all; }
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all; }
 
 .animation-modal-enter, .animation-modal-leave-to {
   opacity: 0;
   transform: scale(1.1); }
 .animation-modal-enter-active, .animation-modal-leave-active {
-  transition: 1s all;
-  -webkit-transition: 1s all; }
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all; }
 
 /*# sourceMappingURL=style.css.map */

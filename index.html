@@ -200,7 +200,7 @@
                                 круглосуточно
                             </p>
 
-                            <button class="call-us__btn">Обратный звонок</button>
+                            <button class="call-us__btn" v-on:click.prevent="modalToggle(1)">Обратный звонок</button>
                         </div>
 
                         <div class="call-us__pic">
@@ -294,37 +294,39 @@
                 <div class="popup" v-show="modal.number == 1">
                     <div class="close" v-on:click.prevent="modalToggle"></div>
 
-                    <form action="mail.php" method="post" name="form-1" v-on:submit.prevent="submit">
-                        <h3 class="heading">test2</h3>
+                    <form action="formManager.php" method="post" name="form-1" v-on:submit.prevent="submit">
+                        <p class="popup-text">
+                            Оставьте Ваши контактные данные
+                            и наш специалист свяжется с вами
+                        </p>
+
+                        <div class="popup-container">
+                            <div>
+                                <span>
+                                    контактный телефон
+                                </span>
+                                <input type="text" name="" placeholder="" data-required>
+                            </div>
+                            <div>
+                                <span>
+                                    имя
+                                </span>
+                                <input type="text" name="" placeholder="" data-required>
+                            </div>
+                        </div>
 
 
 
-                        <button class="btn"></button>
+                        <button class="btn">заказать обратный звонок</button>
                     </form>
                 </div>
             </transition>
 
             <transition name="animation-fade">
-                <div class="popup_lg" v-show="modal.number == 2">
+                <div class="popup_thanks" v-show="modal.thanks">
                     <div class="close" v-on:click.prevent="modalToggle"></div>
 
-                    <form action="mail.php" method="post" name="form-2" v-on:submit.prevent="submit">
-                        <h3 class="heading">test2</h3>
-
-
-
-                        <button class="btn">ok</button>
-                    </form>
-                </div>
-            </transition>
-
-            <transition name="animation-fade">
-                <div class="popup" v-show="modal.thanks">
-                    <div class="close" v-on:click.prevent="modalToggle"></div>
-
-                    <div class="popup_thanks">
-                        <h2>Thanks</h2>
-                    </div>
+                    <h2>Спасибо за заявку!</h2>
                 </div>
             </transition>
         </div>

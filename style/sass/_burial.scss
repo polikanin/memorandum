@@ -1,0 +1,81 @@
+.burial{
+  padding: 45px 0;
+
+  .text-block{
+    margin: 40px auto;
+
+    p{
+      color: #0c1b2f;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+
+      strong{
+        font-weight: 700;
+      }
+    }
+  }
+
+  &-items{
+
+  }
+
+  &-item{
+    @include flex-box();
+    @include justify-content(start);
+    @include align-items(start);
+    margin-bottom: 60px;
+
+    &__pic{
+      width: 285px;
+      min-width: 285px;
+      height: 202px;
+      background-color: #c5b89d;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      z-index: 1;
+      margin: 0 30px 0 0;
+
+      &:after{
+        content: '';
+        width: 1px;
+        height: 100%;
+        background-color: #8c9a4d;
+        position: absolute;
+        top: 0;
+        right: -10px;
+        z-index: 1;
+      }
+    }
+
+    &__container{
+      color: #0c1b2f;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+    }
+
+    &__heading{
+      font-family: Literaturnaya;
+      font-weight: 700;
+      line-height: 26px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    &__list{
+
+    }
+
+    &__text{
+
+    }
+
+    &__price{
+      margin-top: 10px;
+      font-weight: 700;
+    }
+  }
+}

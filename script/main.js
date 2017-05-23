@@ -76,6 +76,7 @@ var app = new Vue ({
         myFilter: '',
         catalog: catalog.slice().sort(),
         catalogFilter: 0,
+        infoTab: 1,
     },
     // filters: {
     //     myFilter: function (val) {

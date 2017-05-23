@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link type="image/x-icon" href="favicon.ico" rel="shortcut icon">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
+    <style>
+        body{
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper-all" id="app">
+    <!-- HEADER -->
+    <header class="header">
+        <div class="wrapper">
+            <div class="header-container">
+                <div class="header-logo">
+                    <img src="image/header/logo.png" alt="pic">
+                </div>
+
+                <div class="header-address">
+                    <p>
+                        <span>Городская ритуальная служба</span>
+                        <span>г. Ростов-на-Дону, ул. Орбитальная, д.1а</span>
+                    </p>
+                    <p>
+                        <span>Полный спектр ритуальных услуг и товаров</span>
+                        <span>г. Ростов-на-Дону, ул. М.Нагибина, д.43</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="wrapper">
+            <ul class="nav-list">
+                <li class="nav-link"><a href="">Организация похорон</a></li>
+                <li class="nav-link"><a href="">Кремация</a></li>
+                <li class="nav-link"><a href="">Памятники</a></li>
+                <li class="nav-link"><a href="">Полезная информация</a></li>
+                <li class="nav-link"><a href="">Статьи</a></li>
+                <li class="nav-link"><a href="">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="crosses">
+        <!-- FIRST SCREEN -->
+        <section class="first-screen" style="background-image: url('image/organisation/first-screen/bg.png')">
+            <div class="wrapper">
+                <div class="first-screen__phone">
+                    <a href="">+7 (928) 600 02 20</a>
+                    <span>круглосуточно</span>
+                </div>
+
+                <button class="first-screen__btn">перезвоним через 5 минут</button>
+            </div>
+        </section>
+
+        <!-- INFORMATION -->
+        <section class="information">
+            <div class="wrapper">
+                <h2 class="heading">
+                    полезная информация
+                </h2>
+
+                <div class="information-tabs">
+                    <ul class="information-tab__btns">
+                        <li><button class="information-tab__btn" v-on:click="infoTab = 1" v-bind:class="{active: infoTab == 1}">Что делать, если умер человек</button></li>
+                        <li><button class="information-tab__btn" v-on:click="infoTab = 2" v-bind:class="{active: infoTab == 2}">Гарантированный перечень услуг по погребению</button></li>
+                        <li><button class="information-tab__btn" v-on:click="infoTab = 3" v-bind:class="{active: infoTab == 3}">Правовое сопровождение</button></li>
+                        <li><button class="information-tab__btn" v-on:click="infoTab = 4" v-bind:class="{active: infoTab == 4}">Традиции</button></li>
+                        <li><button class="information-tab__btn" v-on:click="infoTab = 5" v-bind:class="{active: infoTab == 5}">Кладбища</button></li>
+                        <li><button class="information-tab__btn" v-on:click="infoTab = 6" v-bind:class="{active: infoTab == 6}">Крематории</button></li>
+                        <li><button class="information-tab__btn" v-on:click="infoTab = 7" v-bind:class="{active: infoTab == 7}">Морги</button></li>
+                        <li><button class="information-tab__btn" v-on:click="infoTab = 8" v-bind:class="{active: infoTab == 8}">Отделения ЗАГС</button></li>
+                        <li><button class="information-tab__btn" v-on:click="infoTab = 9" v-bind:class="{active: infoTab == 9}">Церкви</button></li>
+                        <li><button class="information-tab__btn" v-on:click="infoTab = 10" v-bind:class="{active: infoTab == 10}">Мечети</button></li>
+                        <li><button class="information-tab__btn" v-on:click="infoTab = 11" v-bind:class="{active: infoTab == 11}">Синагоги</button></li>
+                        <li><button class="information-tab__btn" v-on:click="infoTab = 12" v-bind:class="{active: infoTab == 12}">Католические храмы</button></li>
+                        <li><button class="information-tab__btn" v-on:click="infoTab = 13" v-bind:class="{active: infoTab == 13}">Организация отпевания</button></li>
+                    </ul>
+
+                    <div class="information-tab__body">
+                        <div v-show="infoTab == 1">
+                            <div class="information-tab__body-head" style="background-image: url('image/info/1.png')">
+                                <div class="information-tab__body-head-inner">
+                                    <h2>
+                                        Традиции
+                                    </h2>
+                                </div>
+                            </div>
+                            <h3>
+                                Вывоз тела
+                            </h3>
+                            <p>
+                                Любого умершего ждет последнее и окончательное путешествие: самый простой маршрут — морг-кладбище. Сложный —морг-церковь-крематорий-кладбище. За телом едут провожающие: 6 человек сопровождают гроб, для остальных по желанию приготовят автобус. Но поездки и живых и мертвых оплачиваются почасово, так что объезжайте пробки.
+                            </p>
+                            <h3>
+                                прощание
+                            </h3>
+                            <p>
+                                Последние извинения, поцелуи для любимых требуют соответствующей обстановки. Не стоит следовать древнему русскому обычаю привозить тело из морга домой для прощания: опасно для здоровья. Но остаются гражданское прощание и религиозный обряд.
+                                Гражданская панихида проводится в ритуальном зале крематория или возле могилы на кладбище. Можно заказать музыку или обойтись без нее: в крематории предложат все, что у них есть.
+                                Религиозные обряды зависят от конфессии покойного и его родственников. 70% россиян — православные, так что 70% похоронных обрядов — это отпевание в православной церкви. «Заочное» отпевание — упоминание об усопшем во время церковной службы — не подходит, так как умершего нужно привезти в храм (кстати, отпевание — в день похорон, похороны по православному канону — на третий день после смерти).
+                                В церковь нужно заранее прийти и договориться со служителями культа. Впрочем, если при выбранном вами кладбище есть храм, вам предложат отпевание на погосте. Иногда при моргах есть траурный зал, куда при желании можно привеcти священника.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL US -->
+        <section class="call-us">
+            <div class="wrapper">
+                <h2 class="title">
+                    Позвоните мы поможем<br>
+                    с организацией ритуального процесса
+                </h2>
+
+                <div class="call-us__container">
+                    <div class="call-us__contacts">
+                        <div class="call-us__block">
+                            <a href="" class="call-us__phone">+7 (928) 600 02 20</a>
+                            <a href="" class="call-us__phone">+7 (988) 990 87 07</a>
+                            <p class="call-us__hours">
+                                круглосуточно
+                            </p>
+
+                            <button class="call-us__btn">Обратный звонок</button>
+                        </div>
+
+                        <div class="call-us__pic">
+                            <img src="image/call-us/1.png" alt="pic">
+                            <img src="image/call-us/2.png" alt="pic">
+                            <img src="image/call-us/3.png" alt="pic">
+                        </div>
+                    </div>
+                    <div class="call-us__links">
+                        <a href="" class="call-us__link">Организация похорон</a>
+                        <a href="" class="call-us__link">Кремация</a>
+                        <a href="" class="call-us__link">Заказать памятник</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="wrapper">
+            <ul class="footer-list">
+                <li class="footer-link">
+                    <a href="">Организация похорон</a>
+
+                    <ul class="footer-sub-list">
+                        <li class="footer-sub-link"><a href="">Венки</a></li>
+                        <li class="footer-sub-link"><a href="">Гробы</a></li>
+                        <li class="footer-sub-link"><a href="">Кресты</a></li>
+                        <li class="footer-sub-link"><a href="">Захоронение</a></li>
+                        <li class="footer-sub-link"><a href="">Ритуальный транспорт</a></li>
+                    </ul>
+                </li>
+                <li class="footer-link">
+                    <a href="">Кремация</a>
+                </li>
+                <li class="footer-link">
+                    <a href="">Памятники</a>
+
+                    <ul class="footer-sub-list">
+                        <li class="footer-sub-link"><a href="">Гранитные</a></li>
+                        <li class="footer-sub-link"><a href="">Мраморные</a></li>
+                    </ul>
+                </li>
+                <li class="footer-link">
+                    <a href="">Полезная информация</a>
+                </li>
+                <li class="footer-link">
+                    <a href="">Статьи</a>
+                </li>
+                <li class="footer-link">
+                    <a href="">Контакты</a>
+                </li>
+            </ul>
+
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="image/footer/logo.png" alt="pic">
+                </div>
+
+                <div class="footer-address">
+                    <p>Полный спектр ритуальных услуг и товаров</p>
+                    <span>г. Ростов-на-Дону</span>
+                    <span>ул М. Нагибина, д.43 (ТРК Горизонт)</span>
+                    <span>ул. Орбитальная, д.1а (Северное городское кладбище)</span>
+                </div>
+
+                <div class="footer-contacts">
+                    <a href="tel:+7(928)6000220">+7 (928) 600 02 20</a>
+                    <a href="tel:+7(988)9908707">+7 (988) 990 87 07</a>
+                    <span>круглосуточно</span>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© Memorandum, 1990-2017</span>
+
+                <a href="">Разработка сайта BeyMax Marketing</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL WINDOW -->
+    <!--<transition name="animation-modal">-->
+    <!--<div class="modal" v-show="modal.isOpen">-->
+    <!--<div class="layout" v-on:click.prevent="modalToggle">-->
+
+    <!--</div>-->
+
+    <!--<transition name="animation-fade">-->
+    <!--<div class="popup" v-show="modal.number == 1">-->
+    <!--<div class="close" v-on:click.prevent="modalToggle"></div>-->
+
+    <!--<form action="mail.php" method="post" name="form-1" v-on:submit.prevent="submit">-->
+    <!--<h3 class="heading">test2</h3>-->
+
+
+
+    <!--<button class="btn"></button>-->
+    <!--</form>-->
+    <!--</div>-->
+    <!--</transition>-->
+
+    <!--<transition name="animation-fade">-->
+    <!--<div class="popup_lg" v-show="modal.number == 2">-->
+    <!--<div class="close" v-on:click.prevent="modalToggle"></div>-->
+
+    <!--<form action="mail.php" method="post" name="form-2" v-on:submit.prevent="submit">-->
+    <!--<h3 class="heading">test2</h3>-->
+
+
+
+    <!--<button class="btn">ok</button>-->
+    <!--</form>-->
+    <!--</div>-->
+    <!--</transition>-->
+
+    <!--<transition name="animation-fade">-->
+    <!--<div class="popup" v-show="modal.thanks">-->
+    <!--<div class="close" v-on:click.prevent="modalToggle"></div>-->
+
+    <!--<div class="popup_thanks">-->
+    <!--<h2>Thanks</h2>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</transition>-->
+    <!--</div>-->
+    <!--</transition>-->
+</div>
+
+<!-- SCRIPT -->
+<script src="script/jquery/dist/jquery.js"></script>
+<script src="script/slick-carousel/slick/slick.js"></script>
+<script src="script/jquery.inputmask/dist/jquery.inputmask.bundle.js"></script>
+<script src="script/fancybox/dist/jquery.fancybox.min.js"></script>
+<script src="script/vue/dist/vue.min.js"></script>
+
+<script src="script/main.js"></script>
+
+<link rel="stylesheet" href="script/slick-carousel/slick/slick.css" />
+<link rel="stylesheet" href="script/fancybox/dist/jquery.fancybox.min.css" />
+
+<link rel="stylesheet" href="style/style.css"/>
+</body>
+</html>
