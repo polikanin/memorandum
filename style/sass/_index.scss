@@ -110,6 +110,23 @@
       font-weight: 700;
       text-transform: uppercase;
     }
+
+    .link{
+      width: 172px;
+      background-color: #8c9a4d;
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      z-index: 10;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 20px 30px;
+      pointer-events: auto;
+    }
   }
 
   .s2{
