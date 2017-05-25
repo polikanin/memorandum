@@ -26,13 +26,13 @@
     }
   }
 
-  &__items{
+  .items{
     margin: 70px auto 0 auto;
     @include flex-box();
     @include justify-content(space-between);
   }
 
-  &__item{
+  .item{
     width: 380px;
 
     &-heading{
